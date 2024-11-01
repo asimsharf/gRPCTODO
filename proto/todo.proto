@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package todo;
+
+import "google/protobuf/empty.proto"; // Import the empty message
+
+option go_package = "sudagoarth.com/proto"; // Update the go_package option
+
+// The Task message defines a simple task structure.
+message Task {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  bool completed = 4;
+}
+
+// The Request messages for CRUD operations
+message CreateTaskRequest {
+  Task task = 1;
+}
+
+message GetTaskRequest {
+  string id = 1;
+}
+
+message UpdateTaskRequest {
+  Task task = 1;
+}
+
+message DeleteTaskRequest {
+  string id = 1;
+}
+
+message ListTasksResponse {
+  repeated Task tasks = 1;
+}
+
+// The service defines our ToDo API.
+service ToDoService {
+  rpc CreateTask(CreateTaskRequest) returns (Task);
+  rpc GetTask(GetTaskRequest) returns (Task);
+  rpc UpdateTask(UpdateTaskRequest) returns (Task);
+  rpc DeleteTask(DeleteTaskRequest) returns (Task);
+  rpc ListTasks(google.protobuf.Empty) returns (ListTasksResponse);
+}
