@@ -1,8 +1,8 @@
 module sudagoarth.com
 
-go 1.21 // or your current Go version
+go 1.23.0 // or your current Go version
 
-toolchain go1.23.2
+toolchain go1.24.1
 
 require (
 	google.golang.org/grpc v1.67.1
@@ -10,8 +10,8 @@ require (
 )
 
 require (
-	golang.org/x/net v0.28.0 // indirect
-	golang.org/x/sys v0.24.0 // indirect
-	golang.org/x/text v0.17.0 // indirect
+	golang.org/x/net v0.38.0 // indirect
+	golang.org/x/sys v0.31.0 // indirect
+	golang.org/x/text v0.23.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240814211410-ddb44dafa142 // indirect
 )
